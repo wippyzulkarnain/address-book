@@ -63,3 +63,25 @@ function remove(keyword){
 }
     }
 }
+
+function modify(a,b,keyword){
+    if (b === "fname") {
+    book[a].fname = keyword
+    console.log("success !")
+    }
+    else if (b === "lname") {
+        book[a].lname = keyword
+        console.log("success !")
+        }
+        else if (b === "address") {
+            book[a].address = keyword
+            console.log("success !")
+            }
+            else if (b === "email") {
+                book[a].email = keyword
+                console.log("success !")
+                }
+                else{
+                    console.log("fail")
+                }
+}
