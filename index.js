@@ -41,16 +41,14 @@ function display() {
 
 function search(keyword) {
   for (i = 0; i < book.length; i++) {
-    if (keyword === book[i].fname) {
+    if (keyword.toLowerCase() === book[i].fname.toLowerCase()) {
       console.log(book[i]);
-    } else if (keyword === book[i].lname) {
+    } else if (keyword.toLowerCase() === book[i].lname.toLowerCase()) {
       console.log(book[i]);
-    } else if (keyword === book[i].email) {
+    } else if (keyword.toLowerCase() === book[i].email.toLowerCase()) {
       console.log(book[i]);
-    } else if (keyword === book[i].address) {
+    } else if (keyword.toLowerCase() === book[i].address.toLowerCase()) {
       console.log(book[i]);
-    } else {
-      console.log("No Result");
     }
   }
 }
@@ -76,6 +74,20 @@ function search2(key, value){
   )
   console.log(result)
 }
+
+function search3(key, value){
+  let result = book.filter(
+    function (entry){
+      if (typeof entry[key] === "string"){
+        return entry[key].toLowerCase().includes(value.toLowerCase())
+      }
+      else {
+      return entry[key] === value
+    }}
+  )
+  console.log(result)
+}
+
 // if (b === "fname") {
 //   book[a].fname = keyword
 //   console.log("success !")
