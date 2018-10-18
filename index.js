@@ -64,10 +64,18 @@ function remove(keyword){
     }
 }
 
-function modify(a,b,keyword){
-    book[a][b]=keyword;
+function modify(index,key,keyword){
+    book[index][key]=keyword;
 }
 
+function search2(key, value){
+  let result = book.filter(
+    function (entry){
+      return entry[key] === value
+    }
+  )
+  console.log(result)
+}
 // if (b === "fname") {
 //   book[a].fname = keyword
 //   console.log("success !")
