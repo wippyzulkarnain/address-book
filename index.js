@@ -167,3 +167,34 @@ function search() {
   }
   result.appendChild(ul);
 }
+
+// const deletebutton = document.getElementById("deletebutton");
+// deletebutton.addEventListener("click", delete)
+
+// function delete() {
+//   for (i = 0; i < book.length; i++) {
+//     if (document.getElementById("delete").value === book[i].fname) {
+//       book.splice(i, 1);
+//       window.alert("success !");
+//     }
+//   }
+// }
+
+const deletebutton = document.getElementById("deletebutton")
+deletebutton.addEventListener("click", remove2)
+function remove2() {
+    for (i = 0; i < book.length; i++) {
+      if (document.getElementById("delete").value === book[i].fname) {
+        book.splice(i, 1);
+        window.alert("success !");
+      }
+    }
+  }
+
+  const modifybutton = document.getElementById("modifybutton")
+modifybutton.addEventListener("click", modify2)
+
+function modify2() {
+  book[document.getElementById("index").value][document.getElementById("key").value] = document.getElementById("newvalue").value;
+  window.alert("success !")
+}
