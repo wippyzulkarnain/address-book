@@ -5,38 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <title>Address Book</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header border">
             <h1>Address Book</h1>
         </div>
-        <div class="form">
-            <div class="submit-box">
+        <div class="form border">
+            <div class="left-form">
+                    <div class="submit-box">
                 <h4>Entry</h4>
                 <input type="text" name="firstName" id="fname" placeholder="First Name">
                 <input type="text" name="lastName" id="lname" placeholder="Last Name">
                 <input type="text" name="email" id="email" placeholder="Email">
                 <input type="text" name="address" id="address" placeholder="Address">
-                <button type="button" id="submitbutton">Submit</button>
-                <button type="button" id="displaybutton">Display</button>
-
+                <button type="button" id="submitbutton" class="btn btn-secondary btn-sm">Submit</button>
+                <h4>Display</h4>
+                <button type="button" id="displaybutton" class="btn btn-secondary btn-sm" >Display</button>
+                <h4>Search</h4>
                 <input type="text" name="search" id="search" placeholder="Search">
-                <button type="button" id="searchbutton">Search</button>
-
+                <button type="button" id="searchbutton" class="btn btn-secondary btn-sm">Search</button>
+                </div>
+            <div class="right-form">
+                <h4>Delete</h4>
                 <input type="text" name="delete" id="delete" placeholder="Delete">
-                <button type="button" id="deletebutton">Delete</button>
-
+                <button type="button" id="deletebutton" class="btn btn-secondary btn-sm">Delete</button>
+                <h4>Modify</h4>
                 <input type="text" name="index" id="index" placeholder="Index">
                 <input type="text" name="key" id="key" placeholder="Key">
                 <input type="text" name="newvalue" id="newvalue" placeholder="New Value">
-                <button type="button" id="modifybutton">Modify</button>
+                <button type="button" id="modifybutton" class="btn btn-secondary btn-sm">Modify</button>
+            </div>
             </div>
         </div>
-        <div id='result'>
+        <div id='result' class="border">
             <h4>Result</h4>
 
         </div>

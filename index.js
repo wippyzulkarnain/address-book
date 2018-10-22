@@ -1,23 +1,7 @@
-let book = [
-  {
-    fname: "Jack",
-    lname: "Bauer",
-    email: "Jack@gmail.com",
-    address: "CTU"
-  },
-  {
-    fname: "John",
-    lname: "Mcclane",
-    email: "John@gmail.com",
-    address: "New York"
-  },
-  {
-    fname: "Tom",
-    lname: "Clancy",
-    email: "Tom@gmail.com",
-    address: "Washington"
-  }
-];
+console.log(localStorage.book)
+
+let book = JSON.parse(localStorage.book || 
+  "[{fname: 'Jack',lname: 'Bauer', email: 'Jack@gmail.com',address: 'CTU'}]")
 
 function add(fname, lname, email, address) {
   book.push({
@@ -121,6 +105,7 @@ function submit() {
   temp["email"] = document.getElementById("email").value;
   temp["address"] = document.getElementById("address").value;
   book.push(temp);
+  display();
 }
 
 const searchbutton = document.getElementById("searchbutton");
@@ -167,6 +152,9 @@ function search() {
   }
   result.appendChild(ul);
 }
+window.onbeforeunload = function() {
+  localStorage.book = JSON.stringify(book)
+};
 
 // const deletebutton = document.getElementById("deletebutton");
 // deletebutton.addEventListener("click", delete)
@@ -197,4 +185,7 @@ modifybutton.addEventListener("click", modify2)
 function modify2() {
   book[document.getElementById("index").value][document.getElementById("key").value] = document.getElementById("newvalue").value;
   window.alert("success !")
+  document.getElementById('index').value =""
 }
+
+display()

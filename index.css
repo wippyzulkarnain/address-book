@@ -10,19 +10,17 @@
 }
 
 .header{
-    background: gray;
     grid-area: header;
 }
 .form{
-    background:blue;
     grid-area: form;
 }
 #result{
-    background: red;
-    grid-area: result
+
+    grid-area: result;  
 }
 h4{
-    margin: 0px;
+    margin: 5px;
     padding: 0px;
     align-self: center;
 }
@@ -31,4 +29,8 @@ h4{
     display: flex;  
     flex-direction: column;
     justify-content: space-between;
+}
+
+.button{
+    border: 5px;
 }
